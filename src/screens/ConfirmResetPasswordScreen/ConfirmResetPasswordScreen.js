@@ -2,51 +2,59 @@ import React, {useState} from 'react'
 import {View, Text, StyleSheet, ScrollView } from 'react-native'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
+import { useNavigation } from '@react-navigation/native'
 
 const EmailConfirmationScreen = () => {
-const [confirmCode, setConfirmCode] = useState('')
-const [confirmPassword, setConfirmPassword] = useState('')
+    const [newPassword, setNewPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
 
+    const navigation = useNavigation()
 
-const onSignInPressed = () => {
-    console.warn('Sign In pressed')
-}
+    const onSignInPressed = () => {
+        console.warn('Sign In pressed')
 
-const onSubmitPressed = () => {
-    console.warn('Submit pressed')
-}
+        navigation.navigate('Sign In')
+    }
 
-return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.root}>
+    const onSubmitPressed = () => {
+        console.warn('Submit pressed')
+        
+        //need to set up reset successful alert and redirect user to the home screen and ask to sign in again
+        navigation.navigate('Sign In')
+    }
 
-            <Text style={styles.headerText}>
-                    Reset Your Password
-            </Text>
+    return (
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.root}>
 
-            <CustomInput 
-                placeholder="Enter confirmation code" 
-                value={confirmCode}
-                setValue={setConfirmCode}
-            />
+                <Text style={styles.headerText}>
+                        Reset Your Password
+                </Text>
 
-            <CustomInput
-                placeholder="Enter your new password"
-                value={confirmPassword}
-                setValue={setConfirmPassword}  
-            />
+                <CustomInput 
+                    placeholder="Enter new password" 
+                    value={newPassword}
+                    setValue={setNewPassword}
+                    secureTextEntry={true}
+                />
 
-            <CustomButton
-                text="Submit"
-                onPress={onSubmitPressed}
-            />
+                <CustomInput
+                    placeholder="Enter your new password"
+                    value={confirmPassword}
+                    setValue={setConfirmPassword} 
+                    secureTextEntry={true} 
+                />
 
-            <CustomButton
-                text="Back to Sign In"
-                type='TERTIARY'
-                onPress={onSignInPressed}
-            />
-            
+                <CustomButton
+                    text="Submit"
+                    onPress={onSubmitPressed}
+                />
+
+                <CustomButton
+                    text="Back to Sign In"
+                    type='TERTIARY'
+                    onPress={onSignInPressed}
+                />
             </View>
         </ScrollView>
     ) 

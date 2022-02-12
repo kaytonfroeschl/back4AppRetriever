@@ -2,54 +2,62 @@ import React, {useState} from 'react'
 import {View, Text, StyleSheet, ScrollView } from 'react-native'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
+import { useNavigation } from '@react-navigation/native'
 
 const EmailConfirmationScreen = () => {
-const [code, setCode] = useState('')
+    const [code, setCode] = useState('')
+
+    const navigation = useNavigation()
 
 
-const onSignInPressed = () => {
-    console.warn('Sign In pressed')
-}
+    const onSignInPressed = () => {
+        console.warn('Sign In pressed')
 
-const onResendCodePressed = () => {
-    console.warn('Resend Code pressed')
-}
+        navigation.navigate('Sign In')
+    }
 
-const onConfirmPressed = () => {
-    console.warn('Confirm pressed')
-}
+    const onResendCodePressed = () => {
+        console.warn('Resend Code pressed')
+        //need to set up resend code programatically
+    }
 
-return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.root}>
+    const onConfirmPressed = () => {
+        console.warn('Confirm pressed')
 
-            <Text style={styles.headerText}>
-                    Confirm your Email
-            </Text>
+        navigation.navigate('Home')
+    }
 
-            <CustomInput 
-                placeholder="Enter your code" 
-                value={code}
-                setValue={setCode}
-            />
+    return (
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.root}>
 
-            <CustomButton
-                text="Confirm Code"
-                onPress={onConfirmPressed}
-            />
+                <Text style={styles.headerText}>
+                        Confirm your Email
+                </Text>
 
-            <CustomButton
-                text="Resend Code"
-                type='SECONDARY'
-                onPress={onResendCodePressed}
-            />
+                <CustomInput 
+                    placeholder="Enter your code" 
+                    value={code}
+                    setValue={setCode}
+                />
 
-            <CustomButton
-                text="Back to Sign In"
-                type='TERTIARY'
-                onPress={onSignInPressed}
-            />
-            
+                <CustomButton
+                    text="Confirm Code"
+                    onPress={onConfirmPressed}
+                />
+
+                <CustomButton
+                    text="Resend Code"
+                    type='SECONDARY'
+                    onPress={onResendCodePressed}
+                />
+
+                <CustomButton
+                    text="Back to Sign In"
+                    type='TERTIARY'
+                    onPress={onSignInPressed}
+                />
+                
             </View>
         </ScrollView>
     ) 

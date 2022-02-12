@@ -3,104 +3,115 @@ import {View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from 'r
 import Logo from '../../../assets/images/clipart4739493.png'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
+import { useNavigation } from '@react-navigation/native'
 
 const SignInScreen = () => {
-const [username, setUsername] = useState('')
-const [password, setPassword] = useState('')
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
 
-const {height} = useWindowDimensions()
+    const {height} = useWindowDimensions()
+    const navigation = useNavigation()
 
-const onSignInPressed = () => {
-    console.warn('Sign In pressed')
-}
+    const onSignInPressed = () => {
+        console.warn('Sign In pressed')
+        //validate username and password
+        //backend call needed here (@kayton, @celia)
+        //if success, navigate to home screen
 
-const onForgotPasswordPressed = () => {
-    console.warn('Forgot Password pressed')
-}
+        navigation.navigate('Home')
+    }
 
-const onSignInFacebookPressed = () => {
-    console.warn('Sign In with Facebook pressed')
-}
+    const onForgotPasswordPressed = () => {
+        console.warn('Forgot Password pressed')
+        //navigate to forgot password screen
 
-const onSignInGooglePressed = () => {
-    console.warn('Sign In with Google pressed')
-}
+        navigation.navigate('Reset Password')
+    }
 
-const onSignInApplePressed = () => {
-    console.warn('Sign In with Apple pressed')
-}
+    const onSignUpPressed = () => {
+        console.warn('Sign Up pressed')
+        //navigate to sign up screen
 
-const onSignUpPressed = () => {
-    console.warn('Sign Up pressed')
-}
+        navigation.navigate('Sign Up')
+    }
 
-return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.root}>
+    const onSignInFacebookPressed = () => {
+        console.warn('Sign In with Facebook pressed')
+    }
 
-            <Image 
-                source={Logo}
-                style={styles.logo, {height: height * 0.15}}
-                resizeMode="contain" 
-            />
+    const onSignInGooglePressed = () => {
+        console.warn('Sign In with Google pressed')
+    }
 
-            <Text 
-                style={styles.headerText}                
-                >
-                    Retriever
-            </Text>
+    const onSignInApplePressed = () => {
+        console.warn('Sign In with Apple pressed')
+    }
 
-            <CustomInput 
-                placeholder="Username" 
-                value={username} 
-                setValue={setUsername}
-            />
+    return (
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.root}>
+                <Image 
+                    source={Logo}
+                    style={styles.logo, {height: height * 0.15}}
+                    resizeMode="contain" 
+                />
 
-            <CustomInput 
-                placeholder="Password"
-                value={password} 
-                setValue={setPassword} 
-                secureTextEntry={true}
-            />
+                <Text 
+                    style={styles.headerText}                
+                    >
+                        Retriever
+                </Text>
 
-            <CustomButton
-                text="Sign In"
-                onPress={onSignInPressed}
-            />
+                <CustomInput 
+                    placeholder="Username" 
+                    value={username} 
+                    setValue={setUsername}
+                />
 
-            <CustomButton
-                text="Forgot Password"
-                onPress={onForgotPasswordPressed}
-                type="TERTIARY"
-            />
+                <CustomInput 
+                    placeholder="Password"
+                    value={password} 
+                    setValue={setPassword} 
+                    secureTextEntry={true}
+                />
 
-            <CustomButton
-                text= "Sign in with Facebook" 
-                onPress={onSignInFacebookPressed}
-                foregroundColor="#E7EAF4"
-                backgroundColor="#436cc9"
-            />
+                <CustomButton
+                    text="Sign In"
+                    onPress={onSignInPressed}
+                />
 
-            <CustomButton
-                text= "Sign in with Google"
-                onPress={onSignInGooglePressed}
-                foregroundColor="#FAE9EA"
-                backgroundColor="#Bb6551"
-            />
+                <CustomButton
+                    text="Forgot Password"
+                    onPress={onForgotPasswordPressed}
+                    type="TERTIARY"
+                />
 
-            <CustomButton
-                text= "Sign in with Apple"
-                onPress={onSignInApplePressed}
-                foregroundColor="#e3e3e3"
-                backgroundColor="#424242"
-            />
+                <CustomButton
+                    text= "Sign in with Facebook" 
+                    onPress={onSignInFacebookPressed}
+                    foregroundColor="#E7EAF4"
+                    backgroundColor="#436cc9"
+                />
 
-            <CustomButton
-                text="Don't have an account? Create one"
-                onPress={onSignUpPressed}
-                type="TERTIARY"
-            />
-            
+                <CustomButton
+                    text= "Sign in with Google"
+                    onPress={onSignInGooglePressed}
+                    foregroundColor="#FAE9EA"
+                    backgroundColor="#Bb6551"
+                />
+
+                <CustomButton
+                    text= "Sign in with Apple"
+                    onPress={onSignInApplePressed}
+                    foregroundColor="#e3e3e3"
+                    backgroundColor="#424242"
+                />
+
+                <CustomButton
+                    text="Don't have an account? Create one"
+                    onPress={onSignUpPressed}
+                    type="TERTIARY"
+                />
             </View>
         </ScrollView>
     ) 
