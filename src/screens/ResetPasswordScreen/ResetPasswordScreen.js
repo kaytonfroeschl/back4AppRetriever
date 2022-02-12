@@ -2,44 +2,51 @@ import React, {useState} from 'react'
 import {View, Text, StyleSheet, ScrollView } from 'react-native'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
+import { useNavigation } from '@react-navigation/native'
 
 const EmailConfirmationScreen = () => {
-const [username, setUsername] = useState('')
+    const [username, setUsername] = useState('')
 
+    const navigation = useNavigation()
 
-const onSignInPressed = () => {
-    console.warn('Sign In pressed')
-}
+    const onSignInPressed = () => {
+        console.warn('Sign In pressed')
 
-const onSendPressed = () => {
-    console.warn('Send pressed')
-}
+        navigation.navigate('Sign In')
+    }
 
-return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.root}>
+    const onSendPressed = () => {
+        console.warn('Send pressed')
+        //need to set up send code programatically
 
-            <Text style={styles.headerText}>
-                    Reset Your Password
-            </Text>
+        navigation.navigate('Confirm Reset Password')
+    }
 
-            <CustomInput 
-                placeholder="Enter your username" 
-                value={username}
-                setValue={setUsername}
-            />
+    return (
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.root}>
 
-            <CustomButton
-                text="Send"
-                onPress={onSendPressed}
-            />
+                <Text style={styles.headerText}>
+                        Reset Your Password
+                </Text>
 
-            <CustomButton
-                text="Back to Sign In"
-                type='TERTIARY'
-                onPress={onSignInPressed}
-            />
-            
+                <CustomInput 
+                    placeholder="Enter your username" 
+                    value={username}
+                    setValue={setUsername}
+                />
+
+                <CustomButton
+                    text="Send"
+                    onPress={onSendPressed}
+                />
+
+                <CustomButton
+                    text="Back to Sign In"
+                    type='TERTIARY'
+                    onPress={onSignInPressed}
+                />
+                
             </View>
         </ScrollView>
     ) 
