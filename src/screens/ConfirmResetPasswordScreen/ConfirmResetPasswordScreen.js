@@ -4,18 +4,23 @@ import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
 
+// building the scren for confirming the reset password
+// like, the place where they set the new password, and confirm it by typing it again
 const EmailConfirmationScreen = () => {
+    // we set newPassword and confirmPassword to be empty strings
     const [newPassword, setNewPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
     const navigation = useNavigation()
 
+    // what happens when user presses "Sign In"
     const onSignInPressed = () => {
         console.warn('Sign In pressed')
 
         navigation.navigate('Sign In')
     }
 
+    // what happens when user presses "Submit"
     const onSubmitPressed = () => {
         console.warn('Submit pressed')
         
@@ -23,6 +28,8 @@ const EmailConfirmationScreen = () => {
         navigation.navigate('Sign In')
     }
 
+    // setting up how the actual page looks
+    // we use custombuttons and custominputs to make the page look like like how it is
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.root}>
@@ -60,6 +67,7 @@ const EmailConfirmationScreen = () => {
     ) 
 }
 
+// making the screen look pretty
 const styles = StyleSheet.create({
     root: {
         alignItems: 'center',
@@ -90,4 +98,6 @@ const styles = StyleSheet.create({
     }
 })
 
+// exporting the page as "EmailConfirmationScreen"
+// we import it into other pages by calling "EmailConfirmationScreen"
 export default EmailConfirmationScreen

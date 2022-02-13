@@ -5,6 +5,7 @@ import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
 
+// building the screen for signing in (essentially the first page new users see)
 const SignInScreen = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -12,6 +13,7 @@ const SignInScreen = () => {
     const {height} = useWindowDimensions()
     const navigation = useNavigation()
 
+    // what happens when user presses "Sign In"
     const onSignInPressed = () => {
         console.warn('Sign In pressed')
         //validate username and password
@@ -21,6 +23,7 @@ const SignInScreen = () => {
         navigation.navigate('Home')
     }
 
+    // what happens when user presses "Forgot Password"
     const onForgotPasswordPressed = () => {
         console.warn('Forgot Password pressed')
         //navigate to forgot password screen
@@ -28,6 +31,7 @@ const SignInScreen = () => {
         navigation.navigate('Reset Password')
     }
 
+    // what happens when user presses "Sign Up"
     const onSignUpPressed = () => {
         console.warn('Sign Up pressed')
         //navigate to sign up screen
@@ -35,18 +39,28 @@ const SignInScreen = () => {
         navigation.navigate('Sign Up')
     }
 
+    // what happens when user presses "Sign In with Facebook"
     const onSignInFacebookPressed = () => {
         console.warn('Sign In with Facebook pressed')
+
+        // need to set up logic here
     }
 
+    // what happens when user presses "Sign In with Google"
     const onSignInGooglePressed = () => {
         console.warn('Sign In with Google pressed')
+
+        // need to set up logic here
     }
 
+    // what happens when user presses "Sign In with Apple"
     const onSignInApplePressed = () => {
         console.warn('Sign In with Apple pressed')
+
+        // need to set up logic here
     }
 
+    // setting up how the actual page looks
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.root}>
@@ -117,6 +131,7 @@ const SignInScreen = () => {
     ) 
 }
 
+// making the screen look pretty
 const styles = StyleSheet.create({
     root: {
         alignItems: 'center',
@@ -139,4 +154,5 @@ const styles = StyleSheet.create({
     },
 })
 
+// exporting the screen to be used in the app (as "SignInScreen")
 export default SignInScreen

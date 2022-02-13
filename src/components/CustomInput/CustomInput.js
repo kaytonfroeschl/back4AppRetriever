@@ -1,6 +1,8 @@
 import React from 'react'
 import {View, Text, TextInput, StyleSheet } from 'react-native'
 
+// these are like spaces where text can be inputted
+// so far, it's been used as the input for the username and password, as well as inputs in the subsequent startup pages
 const CustomInput = ({value, setValue, placeholder, secureTextEntry}) => {
     return (
         <View style={styles.container}>
@@ -15,6 +17,7 @@ const CustomInput = ({value, setValue, placeholder, secureTextEntry}) => {
     ) 
 }
 
+// defining the styles for the inputs (how they look)
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
