@@ -1,6 +1,8 @@
+// this is a temporary home screen lol 
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
+// building the home screen
 const HomeScreen = () => {
     return (
         <View style={styles.root}>
@@ -9,6 +11,7 @@ const HomeScreen = () => {
     );
 }
 
+// making it look pretty
 const styles = StyleSheet.create({
     root: {
         alignItems: 'center',
@@ -17,4 +20,5 @@ const styles = StyleSheet.create({
     },
 })
 
+// exporting the home screen to be used in the app (so it can be used in other screens)
 export default HomeScreen;

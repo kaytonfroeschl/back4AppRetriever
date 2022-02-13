@@ -14,6 +14,9 @@ public class MainActivity extends ReactActivity {
     return "Retriever";
   }
 
+  // this is the entry point for the app
+  // I added this for navigation to work but idk how it works
+  // need to do something similar for ios I think but I don't know how
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(null);

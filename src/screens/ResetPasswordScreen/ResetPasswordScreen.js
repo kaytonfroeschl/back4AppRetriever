@@ -3,25 +3,30 @@ import {View, Text, StyleSheet, ScrollView } from 'react-native'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
+import ResetPasswordScreen from '.'
 
-const EmailConfirmationScreen = () => {
+// screen used to reset the password
+const ResetPasswordScreen = () => {
     const [username, setUsername] = useState('')
 
     const navigation = useNavigation()
 
+    // what happens when user presses "Sign In"
     const onSignInPressed = () => {
         console.warn('Sign In pressed')
 
         navigation.navigate('Sign In')
     }
 
+    // what happens when user presses "Send"
     const onSendPressed = () => {
         console.warn('Send pressed')
-        //need to set up send code programatically
 
+        //need to set up send code programatically
         navigation.navigate('Confirm Reset Password')
     }
 
+    // setting up how the actual page looks
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.root}>
@@ -52,6 +57,7 @@ const EmailConfirmationScreen = () => {
     ) 
 }
 
+// making the screen look pretty
 const styles = StyleSheet.create({
     root: {
         alignItems: 'center',
@@ -82,4 +88,5 @@ const styles = StyleSheet.create({
     }
 })
 
-export default EmailConfirmationScreen
+// exporting the screen as "ResetPasswordScreen" so it can be used in other screens 
+export default ResetPasswordScreen

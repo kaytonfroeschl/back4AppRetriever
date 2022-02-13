@@ -1,8 +1,12 @@
+// don't know why this is the index page lol I meant to separate it into index.js and navigation.js
+// but it works so I'm not complaining
 import React from 'react';
 import {View, Text} from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+// I'm importing all the screens here so that they can be used in the navigation
+// If we build more screens, they need to be imported here, and also below wehre we organize them in order of access
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import EmailConfirmationScreen from '../screens/EmailConfirmationScreen/EmailConfirmationScreen';
@@ -10,6 +14,8 @@ import ResetPasswordScreen from '../screens/ResetPasswordScreen';
 import ConfirmResetPasswordScreen from '../screens/ConfirmResetPasswordScreen';
 import HomeScreen from '../screens/HomeScreen';
 
+// this bit of code I had to look up to get the theme to work
+// essentially just defined the background color of the app to be that signature dark blue color
 const MyTheme = {
     ...DefaultTheme,
     colors: {
@@ -20,6 +26,8 @@ const MyTheme = {
 
 const Stack = createNativeStackNavigator();
 
+// this is the navigation component that we will use to navigate between screens
+// wrapping the entire thing in the NavigationContainer component so that we can use the navigation component
 const Navigation = () => {
     return (
         <NavigationContainer theme={MyTheme} > 
@@ -36,4 +44,5 @@ const Navigation = () => {
     );
 };
 
+//we can call this screen in different .js files by importing "Navigation"
 export default Navigation;
