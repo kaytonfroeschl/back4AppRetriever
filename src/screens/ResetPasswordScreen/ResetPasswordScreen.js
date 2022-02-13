@@ -6,8 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 import ResetPasswordScreen from '.'
 
 // screen used to reset the password
-// this should actually be "ResetPasswordScreen" but idk what's wrong with it, it doesn't work if I change it so I'm gonna keep it the way it is for now
-const EmailConfirmationScreen = () => {
+const ResetPassword = () => {
     const [username, setUsername] = useState('')
 
     const navigation = useNavigation()
@@ -90,5 +89,4 @@ const styles = StyleSheet.create({
 })
 
 // exporting the screen as "ResetPasswordScreen" so it can be used in other screens 
-// this should actually be "ResetPasswordScreen" but idk what's wrong with it, it doesn't work if I change it so I'm gonna keep it the way it is for now
-export default EmailConfirmationScreen
+export default ResetPassword

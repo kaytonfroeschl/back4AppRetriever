@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 
 // building the scren for confirming the reset password
 // like, the place where they set the new password, and confirm it by typing it again
-const EmailConfirmationScreen = () => {
+const ConfirmReset = () => {
     // we set newPassword and confirmPassword to be empty strings
     const [newPassword, setNewPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
@@ -98,6 +98,5 @@ const styles = StyleSheet.create({
     }
 })
 
-// exporting the page as "EmailConfirmationScreen"
-// we import it into other pages by calling "EmailConfirmationScreen"
-export default EmailConfirmationScreen
+// exporting the page as "ConfirmReset" so it can be used in other screens
+export default ConfirmReset
