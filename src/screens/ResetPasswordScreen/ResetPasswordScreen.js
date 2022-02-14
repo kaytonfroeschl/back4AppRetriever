@@ -3,10 +3,9 @@ import {View, Text, StyleSheet, ScrollView } from 'react-native'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
-import ResetPasswordScreen from '.'
 
 // screen used to reset the password
-const ResetPassword = () => {
+const ResetPasswordScreen = () => {
     const [username, setUsername] = useState('')
 
     const navigation = useNavigation()
@@ -89,4 +88,4 @@ const styles = StyleSheet.create({
 })
 
 // exporting the screen as "ResetPasswordScreen" so it can be used in other screens 
-export default ResetPassword
+export default ResetPasswordScreen
