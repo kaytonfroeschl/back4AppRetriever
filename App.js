@@ -1,22 +1,26 @@
 //setting up the app 
-import React from 'react';
+import * as React from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
   Text,
+  View,
 } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 //we need to import the navigation library from @react-navigation/native in order to navigate between screens
-import Navigation from './src/navigation';
+import Navigation from './src/navigation/index';
 
 const App = () => {
   return (
     //we need to wrap the entire app in a SafeAreaView to prevent the status bar from covering the top of the screen
     //safe area view is a view that automatically adjusts its height to account for the status bar
     //then, we wrap the entire app in a navigation object
-    <SafeAreaView style={styles.root}>
-      <Navigation/>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <View style={styles.root}>
+        <Navigation />
+      </View>
+
+    </SafeAreaProvider>
   );
 };
 
