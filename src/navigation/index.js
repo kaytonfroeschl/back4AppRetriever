@@ -1,9 +1,9 @@
 // don't know why this is the index page lol I meant to separate it into index.js and navigation.js
 // but it works so I'm not complaining
-import React from 'react';
-import {View, Text} from 'react-native';
+import * as React from 'react';
+import { View, Text } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // I'm importing all the screens here so that they can be used in the navigation
 // If we build more screens, they need to be imported here, and also below wehre we organize them in order of access
@@ -21,7 +21,7 @@ const MyTheme = {
     colors: {
         ...DefaultTheme.colors,
         background: '#3b5998',
-    },  
+    },
 };
 
 const Stack = createNativeStackNavigator();
@@ -30,15 +30,15 @@ const Stack = createNativeStackNavigator();
 // wrapping the entire thing in the NavigationContainer component so that we can use the navigation component
 const Navigation = () => {
     return (
-        <NavigationContainer theme={MyTheme} > 
-            <Stack.Navigator screenOptions={{headerShown: false}} >
+        <NavigationContainer theme={MyTheme} >
+            <Stack.Navigator screenOptions={{ headerShown: false }} >
                 <Stack.Screen name="Sign In" component={SignInScreen} />
                 <Stack.Screen name="Sign Up" component={SignUpScreen} />
                 <Stack.Screen name="Email Confirmation" component={EmailConfirmationScreen} />
                 <Stack.Screen name="Reset Password" component={ResetPasswordScreen} />
                 <Stack.Screen name="Confirm Reset Password" component={ConfirmResetPasswordScreen} />
                 <Stack.Screen name="Home" component={HomeScreen} />
-                
+
             </Stack.Navigator>
         </NavigationContainer>
     );

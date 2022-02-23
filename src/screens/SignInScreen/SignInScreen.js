@@ -66,7 +66,7 @@ const SignInScreen = () => {
             <View style={styles.root}>
                 <Image 
                     source={Logo}
-                    style={styles.logo, {height: height * 0.15}}
+                    style={styles.logo, {height: height * 0.15, marginTop: 25}}
                     resizeMode="contain" 
                 />
 
@@ -133,6 +133,7 @@ const SignInScreen = () => {
 
 // making the screen look pretty
 const styles = StyleSheet.create({
+    
     root: {
         alignItems: 'center',
         padding: 40,
@@ -152,6 +153,7 @@ const styles = StyleSheet.create({
         color: 'white',
 
     },
+   
 })
 
 // exporting the screen to be used in the app (as "SignInScreen")
