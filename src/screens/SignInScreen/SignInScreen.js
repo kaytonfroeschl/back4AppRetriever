@@ -1,25 +1,37 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from 'react-native'
 import Logo from '../../../assets/images/clipart4739493.png'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
 
+import { useAuth } from '../../../providers/AuthProvider';
+
+
+
 // building the screen for signing in (essentially the first page new users see)
 const SignInScreen = () => {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    //const [username, setUsername] = useState('')
+    //const [password, setPassword] = useState('')
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const { user, signUp, signIn } = useAuth();
 
     const {height} = useWindowDimensions()
     const navigation = useNavigation()
 
     // what happens when user presses "Sign In"
-    const onSignInPressed = () => {
-        console.warn('Sign In pressed')
+    const onSignInPressed = async () => {
+        //console.warn('Sign In pressed')
+        console.log("Press sign in");
         //validate username and password
         //backend call needed here (@kayton, @celia)
         //if success, navigate to home screen
-
+        try {
+            await signIn(email, password);
+          } catch (error) {
+            Alert.alert(`Failed to sign in: ${error.message}`);
+          }
         navigation.navigate('Home')
     }
 
@@ -78,8 +90,8 @@ const SignInScreen = () => {
 
                 <CustomInput 
                     placeholder="Username" 
-                    value={username} 
-                    setValue={setUsername}
+                    value={email} //was username
+                    setValue={setEmail} //was setUsername
                 />
 
                 <CustomInput 

@@ -1,0 +1,6 @@
+module Pods_Retriever_RetrieverTests {
+  umbrella header "Pods-Retriever-RetrieverTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
