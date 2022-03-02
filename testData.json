@@ -1,0 +1,33 @@
+{
+   "Users" : [{
+        "user_id" : "bfroeschl",
+        "firstName" : "Bill",
+        "lastName" : "Froeschl",
+        "email" : "bfroeschl@gmail.com" 
+    },
+
+    {
+        "user_id" : "lfroeschl",
+        "firstName" : "Lori",
+        "lastName" : "Froeschl",
+        "email" : "lkfroeschl@yahoo.com" 
+    },
+    {
+        "user_id" : "kfroeschl",
+        "firstName" : "Kayton",
+        "lastName" : "Froeschl",
+        "email" : "kfroeschl@gmail.com" 
+    },
+    {
+        "user_id" : "emcgannon",
+        "firstName" : "Emily",
+        "lastName" : "McGannon",
+        "email" : "emtinitot@gmail.com" 
+    },
+    {
+        "user_id" : "mkeller",
+        "firstName" : "Mary",
+        "lastName" : "Keller",
+        "email" : "marykeller@minted.com" 
+    }]
+}

@@ -1,0 +1,6 @@
+module Pods_Retriever {
+  umbrella header "Pods-Retriever-umbrella.h"
+
+  export *
+  module * { export * }
+}
