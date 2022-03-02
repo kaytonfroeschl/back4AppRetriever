@@ -6,7 +6,7 @@ import { View, Text, StyleSheet } from "react-native";
 const HomeScreen = () => {
     return (
         <View style={styles.root}>
-            <Text style={{ fontSize: 24, alignSelf: 'center' }}>dsabcjsabjk</Text>
+            <Text style={{ fontSize: 24, alignSelf: 'center' }}>You are now in the app</Text>
         </View>
     );
 }
