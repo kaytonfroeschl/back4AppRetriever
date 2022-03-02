@@ -11,7 +11,6 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Navigation from './src/navigation/index';
 
 //import backend
-import { AuthProvider } from './providers/AuthProvider';
 
 
 const App = () => {
@@ -19,7 +18,6 @@ const App = () => {
 
 
   return (
-    <AuthProvider>
     //we need to wrap the entire app in a SafeAreaView to prevent the status bar from covering the top of the screen
     //safe area view is a view that automatically adjusts its height to account for the status bar
     //then, we wrap the entire app in a navigation object
@@ -29,7 +27,6 @@ const App = () => {
       </View>
 
     </SafeAreaProvider>
-    </AuthProvider>
   );
 };
 
