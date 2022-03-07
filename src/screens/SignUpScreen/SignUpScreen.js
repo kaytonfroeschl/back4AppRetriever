@@ -22,6 +22,22 @@ const SignUpScreen = () => {
     // what happens when user presses "Register"
     const onRegisterPressed = () => {
         console.warn('Register pressed')
+        /* NEW */
+        async function saveNewUser() {
+            //creating Parse object
+            const user = new Parse.Object('User');
+            user.set('username', 'Billy Bob');
+            user.set('password', '123');
+                try {
+                //save the object
+                const result = await user.save();
+                console.warn('New object created with objectId ' + result.id);
+                } catch (error) {
+                console.warn('failed to create new object: ' + error.message);
+                }
+            }
+            
+        /* END NEW */
 
         navigation.navigate('Email Confirmation')
     }

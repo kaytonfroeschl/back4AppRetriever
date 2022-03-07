@@ -10,9 +10,16 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 //we need to import the navigation library from @react-navigation/native in order to navigate between screens
 import Navigation from './src/navigation/index';
 
+/* NEW */
 //import backend
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Parse from 'parse/react-native';
 
-
+//before using the SDK...
+Parse.setAsyncStorage(AsyncStorage);
+Parse.initialize('n1J09Sm46bMfbFLgKCOK1qkfDq1DoIkvPjwY3hud','zazI7A5Ug07VdaU5tXfnEJAwJVwhGs5TRrNIVZas');
+Parse.serverURL = 'https://parseapi.back4app.com/'
+/* END NEW */
 const App = () => {
 
 
